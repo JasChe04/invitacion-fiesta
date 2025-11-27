@@ -1,0 +1,235 @@
+/* --- VARIABLES --- */
+:root {
+    --skin-color: #fecb98;
+    --hair-color: #4a2c0f;
+    --bottle-color: #5e2c04;
+    --beer-color: #ffc400;
+    --foam-color: #ffffff;
+    --label-white: #f4f4f4;
+    --pink-accent: #FF577F;
+    --green-accent: #25d366;
+    --blue-accent: #00d2ff;
+    --dark-card-bg: #111111;
+    --modal-accent: #00e5ff; 
+
+    /* Variables mano sirviendo */
+    --hand-skin-color: #fecb98;
+    --hand-clothes-color: #834f1d; 
+    --hand-bottle-color: #5e2c04;
+
+    /* Variables mini-personajes */
+    --mini-hair-color-female: #e6b32b;
+    --mini-clothes-color-female: #e91e63; 
+    --mini-clothes-color-male: #2ecc71; 
+    --mini-pants-color: #34495e; 
+}
+
+/* --- ANIMACIONES GENERALES --- */
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@keyframes fadeInUpSoft { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounceInLeft { 0% { opacity: 0; transform: translateX(-50px); } 60% { opacity: 1; transform: translateX(10px); } 100% { opacity: 1; transform: translateX(0); } }
+@keyframes bounceInRight { 0% { opacity: 0; transform: translateX(50px); } 60% { opacity: 1; transform: translateX(-10px); } 100% { opacity: 1; transform: translateX(0); } }
+@keyframes popInElastic { 0% { opacity: 0; transform: scale(0.5); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes pulseBtn { 0% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(255, 59, 59, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0); } }
+@keyframes appearAndPulse { 0% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes slideInRightList { 0% { opacity: 0; transform: translateX(-30px); } 100% { opacity: 1; transform: translateX(0); } }
+
+/* --- ANIMACIONES DEL LOADER (3 Segundos) --- */
+@keyframes miniDrink {
+    0%, 55% { transform: rotate(0deg); } 
+    60% { transform: rotate(-60deg) translateY(-10px) translateX(-2px); } 
+    85% { transform: rotate(-60deg) translateY(-10px) translateX(-2px); }
+    90% { transform: rotate(0deg); } 
+    100% { transform: rotate(0deg); }
+}
+@keyframes streamFlow {
+    0%, 25% { height: 0; opacity: 0; }
+    30% { height: 180px; opacity: 1; } 
+    45% { height: 180px; opacity: 1; } 
+    50% { height: 0; opacity: 0; } 
+    100% { height: 0; opacity: 0; }
+}
+@keyframes fillGlass { 0%, 30% { height: 0%; } 50% { height: 85%; } 100% { height: 85%; } }
+@keyframes foamRise { 0%, 30% { bottom: 0%; transform: scale(0); } 50% { bottom: 85%; transform: scale(1); } 100% { bottom: 85%; transform: scale(1); } }
+@keyframes servingHandAction {
+    0%, 20% { transform: translate(150px, 0px) rotate(0deg); opacity: 0; } 
+    25% { transform: translate(0px, 0px) rotate(0deg); opacity: 1; } 
+    30% { transform: translate(0px, 0px) rotate(-90deg); opacity: 1; } 
+    45% { transform: translate(0px, 0px) rotate(-90deg); opacity: 1; } 
+    50% { transform: translate(0px, 0px) rotate(0deg); opacity: 1; } 
+    55% { transform: translate(150px, 0px) rotate(0deg); opacity: 0; } 
+    100% { transform: translate(150px, 0px) rotate(0deg); opacity: 0; }
+}
+@keyframes servingBottleAngle {
+    0%, 25% { transform: rotate(0deg); } 30% { transform: rotate(90deg); }
+    45% { transform: rotate(90deg); } 50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* --- ESTILOS GENERALES Y LAYOUT --- */
+body {
+    font-family: 'Poppins', sans-serif; background-color: #000; margin: 0; padding: 0;
+    display: flex; justify-content: center; align-items: center; min-height: 100vh;
+    box-sizing: border-box; color: #333; overflow-x: hidden;
+}
+
+/* --- OVERLAY & PORTADA --- */
+.overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    z-index: 9999; text-align: center; transition: opacity 0.8s ease-out, transform 0.8s ease-out; transform: scale(1);
+}
+.portada-contenido {
+    background-color: #1a1a1a; color: #fff; padding: 50px 70px; border-radius: 15px;
+    border: 1px solid #333; max-width: 90%; width: 500px; animation: popInElastic 1s forwards;
+}
+.portada-contenido h1 { color: white; font-size: 3em; margin-bottom: 25px; font-weight: 700; border-right: .15em solid white; overflow: hidden; white-space: normal; max-width: 100%; }
+.portada-contenido p { font-size: 1.3em; margin-bottom: 35px; color: #ccc; border-right: .15em solid white; overflow: hidden; white-space: normal; max-width: 100%; }
+#btnAceptar {
+    background-color: var(--pink-accent); color: white; padding: 18px 40px; border: none; border-radius: 50px;
+    cursor: pointer; font-size: 1.4em; font-weight: bold; margin-top: 30px; transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 87, 127, 0.3);
+}
+#btnAceptar:hover { background-color: #e91e63; transform: translateY(-3px); }
+
+/* --- LOADER SCENE --- */
+#beer-loader { display: none; background-color: #000; }
+.vector-scene { 
+    position: relative; width: 700px; height: 400px; 
+    display: flex; justify-content: center; align-items: flex-end; 
+    transform: scale(1); overflow: hidden; margin-bottom: 50px; 
+}
+
+/* Elementos del Loader */
+.glass-container { position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); width: 80px; height: 180px; z-index: 0; }
+.glass-body { position: relative; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.1); border: 4px solid #fff; border-top: none; border-radius: 5px 5px 40px 40px; overflow: hidden; box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+.liquid { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background-color: var(--beer-color); animation: fillGlass 3s ease-in-out forwards; }
+.foam-head { position: absolute; bottom: 0; left: -10%; width: 120%; height: 30px; z-index: 6; animation: foamRise 3s ease-in-out forwards; }
+.bubble { position: absolute; background-color: var(--foam-color); border-radius: 50%; }
+.b1 { width: 35px; height: 35px; left: 10px; top: -10px; } .b2 { width: 45px; height: 45px; left: 30px; top: -15px; } .b3 { width: 30px; height: 30px; left: 60px; top: -5px; } .b4 { width: 25px; height: 25px; left: 0px; top: 0px; } 
+
+.stream { position: absolute; top: 130px; left: calc(50% + 15px); width: 10px; height: 0; background-color: var(--beer-color); border-radius: 10px; z-index: 1; animation: streamFlow 3s ease-in-out forwards; }
+.serving-hand-container { position: absolute; bottom: 150px; left: calc(50% + 50px); z-index: 15; transform-origin: top left; animation: servingHandAction 3s ease-in-out forwards; }
+.serving-hand { position: relative; width: 120px; height: 50px;}
+.sh-arm { position: absolute; top: 0; left: 0; width: 80px; height: 40px; background-color: var(--hand-clothes-color); border-radius: 20px;}
+.sh-hand { position: absolute; top: 10px; left: 70px; width: 40px; height: 40px; background-color: var(--hand-skin-color); border-radius: 50%; transform: rotate(15deg);}
+.sh-bottle { position: absolute; top: -50px; left: 80px; width: 35px; height: 70px; background-color: var(--hand-bottle-color); border-radius: 8px; transform-origin: 50% 100%; animation: servingBottleAngle 3s ease-in-out forwards;}
+.shb-neck { position: absolute; top: -15px; left: 8px; width: 19px; height: 25px; background-color: var(--hand-bottle-color); border-radius: 5px 5px 0 0;}
+.shb-label { position: absolute; top: 15px; left: 5px; width: 25px; height: 40px; background-color: var(--label-white); border-radius: 3px;}
+
+/* Mini Personajes */
+.mini-person { position: absolute; bottom: 50px; width: 50px; height: 90px; z-index: 5; }
+.mini-person-left { left: calc(50% - 150px); }
+.mini-person-right { right: calc(50% - 150px); }
+.mp-head { position: absolute; top: 0; left: 12px; width: 25px; height: 30px; background-color: var(--skin-color); border-radius: 50%; z-index: 4;}
+.mp-hair { position: absolute; top: -5px; left: 0; width: 35px; height: 20px; background-color: var(--hair-color); border-radius: 50% 50% 0 0;}
+.mp-hair.female { background-color: var(--mini-hair-color-female); height: 32px; border-radius: 50%; top: -7px; left: -5px; width: 45px;} 
+.mp-eye { position: absolute; top: 10px; width: 3px; height: 3px; background-color: #000; border-radius: 50%; z-index: 6;}
+.mp-eye.left { left: 7px; } .mp-eye.right { right: 7px; }
+.mp-mouth { position: absolute; top: 18px; left: 18px; width: 6px; height: 2px; background-color: #a00; border-radius: 0 0 2px 2px;}
+.mp-body { position: absolute; top: 25px; left: 10px; width: 30px; height: 40px; background-color: var(--mini-clothes-color-male); border-radius: 5px 5px 7px 7px; z-index: 3;}
+.mp-body.female-clothes { background-color: var(--mini-clothes-color-female); border-radius: 5px 5px 25px 25px; height: 45px; width: 35px; left: 7.5px;} 
+.mp-arm.left { position: absolute; top: 32px; left: -2px; width: 10px; height: 35px; background-color: var(--mini-clothes-color-male); border-radius: 6px; z-index: 2;}
+.mp-arm.right { position: absolute; top: 32px; right: -2px; width: 10px; height: 35px; background-color: var(--mini-clothes-color-male); border-radius: 6px; z-index: 6; transform-origin: top center; animation: miniDrink 3s ease-in-out forwards; }
+.mini-person-right .mp-arm.left { background-color: var(--mini-clothes-color-female); }
+.mini-person-right .mp-arm.right { background-color: var(--mini-clothes-color-female); }
+.mp-bottle { position: absolute; bottom: -10px; left: -5px; width: 15px; height: 30px; background-color: var(--bottle-color); border-radius: 3px; transform-origin: 50% 10%; }
+.mpb-neck { position: absolute; top: -7px; left: 3px; width: 7px; height: 10px; background-color: var(--bottle-color); border-radius: 2px 2px 0 0; }
+.mp-leg { position: absolute; bottom: -10px; width: 15px; height: 20px; background-color: var(--mini-pants-color); border-radius: 0 0 6px 6px; z-index: 2;}
+.mp-leg.left { left: 10px; } .mp-leg.right { right: 10px; }
+
+.loader-text { position: relative; z-index: 20; color: #e0e0e0; font-size: 1.8em; font-weight: 800; margin-top: 40px; text-transform: uppercase; letter-spacing: 1px; animation: blink 1.5s infinite; text-align: center; width: 100%; bottom: 0; }
+
+/* --- RESPONSIVE LOADER --- */
+@media (max-width: 600px) {
+    .vector-scene { transform: scale(0.45); width: 100%; height: 180px; overflow: visible; }
+    .mini-person-left { left: calc(50% - 140px); } .mini-person-right { right: calc(50% - 140px); }
+    .portada-contenido { padding: 5vw; width: 85%; }
+    .portada-contenido h1 { font-size: 1.8em; max-width: 90%; }
+    .portada-contenido p { font-size: 0.9em; max-width: 90%; }
+    #btnAceptar { font-size: 1.1em; padding: 12px 25px; }
+    .loader-text { font-size: 1em; margin-top: 20px; transform: translateY(-50px); }
+    .invitacion-card { padding: 25px 15px; max-width: 95%; }
+    .invitacion-card h1 { font-size: 1.8em; }
+    .subtitulo { font-size: 1em; }
+    .mensaje { font-size: 0.9em; }
+    .detalle-item { font-size: 0.85em; }
+    .boton-obligatorio { font-size: 0.9em; padding: 10px 18px; }
+    .boton-confirmar { font-size: 1em; padding: 10px 12px; }
+    .modal-content { padding: 25px 15px; max-width: 95%; }
+    .modal-content h2 { font-size: 1.3em; }
+    .lista-reglas li { font-size: 0.9em; }
+    .container-confirmar .boton-cal { font-size: 0.9em; padding: 10px; margin: 5px 0; width: 100%; }
+    .calendar-buttons { flex-direction: column; }
+}
+
+/* --- TARJETA FINAL --- */
+.invitacion-card {
+    display: none; flex-direction: column; align-items: center; justify-content: center;
+    background-color: var(--dark-card-bg); padding: 50px 30px; border-radius: 30px;
+    box-shadow: 0 20px 70px rgba(255, 87, 127, 0.2); text-align: center; width: 90%; max-width: 480px;
+    border: 1px solid #333; margin: 20px auto; animation: popInElastic 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    position: relative; z-index: 1; 
+}
+.anim-top, .anim-left, .anim-right, .anim-pop { opacity: 0; }
+.anim-top { animation: fadeInUpSoft 0.8s ease-out forwards; }
+.anim-left { animation: bounceInLeft 1s cubic-bezier(0.25, 1.5, 0.5, 1) forwards; }
+.anim-right { animation: bounceInRight 1s cubic-bezier(0.25, 1.5, 0.5, 1) forwards; }
+.anim-pop { animation: popInElastic 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.invitacion-card h1 { color: var(--pink-accent); font-size: 2.8em; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+.subtitulo { color: #ffffff; font-size: 1.3em; font-weight: 600; margin-bottom: 25px; }
+.mensaje { color: #cccccc; font-size: 1.1em; margin-bottom: 30px; font-weight: 300; line-height: 1.6; }
+.detalles { width: 100%; padding-top: 20px; border-top: 1px solid #333; margin-bottom: 30px; }
+.detalle-item { display: flex; align-items: center; margin: 20px 0; color: #ffffff; }
+.icon-box { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; flex-shrink: 0; }
+.material-icons { color: var(--pink-accent); font-size: 28px; }
+.detalle-texto { margin-left: 15px; font-weight: 500; font-size: 1.1em; text-align: left; }
+.location-content { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-left: 15px; }
+.location-content .detalle-texto { margin-left: 0; }
+.btn-ver-ubicacion { background-color: var(--blue-accent); color: #000; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85em; font-weight: 700; white-space: nowrap; transition: 0.2s; box-shadow: 0 0 10px rgba(0, 210, 255, 0.4); }
+.btn-ver-ubicacion:hover { background-color: #fff; transform: scale(1.05); }
+.boton-obligatorio {
+    display: flex; align-items: center; justify-content: center; background-color: #ff3b3b; color: white; padding: 15px 30px; border-radius: 50px; 
+    border: none; font-weight: bold; font-size: 1.1em; cursor: pointer; margin-bottom: 20px; width: 80%; 
+    box-shadow: none; transition: all 0.3s ease; opacity: 0; 
+    animation: appearAndPulse 1s ease-out 1.6s forwards, pulseBtn 2s infinite 2.6s;
+}
+.boton-obligatorio:hover { background-color: #ff3b3b; color: white; box-shadow: none; transform: none; }
+.boton-obligatorio .material-icons { margin-right: 10px; font-size: 28px; }
+.boton-confirmar { display: flex; align-items: center; justify-content: center; background-color: var(--green-accent); color: white; padding: 15px 20px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 1.2em; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); width: 100%; box-sizing: border-box; transition: 0.3s; }
+.boton-confirmar:hover { background-color: #128c7e; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6); }
+
+/* Estilo para el ícono (material-icons) dentro del botón de confirmar */
+.boton-confirmar .material-icons {
+    margin-right: 10px; 
+    font-size: 28px;
+}
+
+/* --- ESTILOS MODAL --- */
+.modal-overlay { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; opacity: 0; transition: opacity 0.5s ease-out; }
+.modal-overlay.active { opacity: 1; }
+.modal-content {
+    background-color: #1a1a1a; padding: 40px; border-radius: 15px; width: 90%; max-width: 400px;
+    position: relative; box-shadow: 0 0 40px rgba(0, 229, 255, 0.3); color: white;
+    transform: translateY(-50px); opacity: 0; transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    border: 3px solid #000; /* Borde NEGRO solicitado */
+}
+.modal-overlay.active .modal-content { transform: translateY(0); opacity: 1; }
+.close-modal { color: #aaa; float: right; font-size: 35px; font-weight: bold; position: absolute; top: 10px; right: 20px; cursor: pointer; transition: 0.2s; }
+.close-modal:hover, .close-modal:focus { color: var(--pink-accent); text-decoration: none; }
+.modal-content h2 { color: var(--modal-accent); margin-bottom: 25px; font-size: 1.8em; text-transform: uppercase; border-bottom: 2px solid #333; padding-bottom: 10px; }
+.lista-reglas { list-style: none; padding: 0; margin: 0 0 30px 0; }
+.lista-reglas li { font-size: 1.1em; margin-bottom: 15px; display: flex; align-items: center; color: #ccc; opacity: 0; animation: slideInRightList 0.5s ease-out forwards; }
+.lista-reglas li::before { content: "⚡"; margin-right: 10px; font-size: 1.2em; color: var(--pink-accent); }
+.nota-regalo { background-color: #333; padding: 15px; border-left: 5px solid var(--pink-accent); border-radius: 5px; font-size: 0.95em; color: #fff; opacity: 0; animation: fadeInUpSoft 0.5s ease-out forwards; }
+.nota-regalo strong { color: var(--pink-accent); }
+.container-confirmar { margin-top: 30px; text-align: center; opacity: 0; animation: fadeInUpSoft 0.5s ease-out forwards; }
+.texto-final { font-size: 1.2em; color: #fff; margin-bottom: 15px; font-weight: 600; }
+
+/* Calendario Botones */
+.calendar-buttons { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+.boton-cal { display: flex; align-items: center; justify-content: center; padding: 10px 15px; border-radius: 8px; text-decoration: none; color: white; font-weight: 500; transition: 0.3s; font-size: 0.9em; width: 48%; box-sizing: border-box; }
+.google-calendar { background-color: #4285F4; } .google-calendar:hover { background-color: #357ae8; }
+.ics-calendar { background-color: #6c757d; } .ics-calendar:hover { background-color: #5a6268; }
+.boton-cal .material-icons { margin-right: 5px; font-size: 18px; }
+.brand-icon { width: 18px; height: 18px; margin-right: 5px; fill: currentColor; }

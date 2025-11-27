@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a tomar 🎉</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+</head>
+<body>
+
+    <div id="portada" class="overlay">
+        <div class="portada-contenido entrada-elegante">
+            <h1 id="tituloPorta"></h1> 
+            <p id="subtituloPorta"></p> 
+            <button id="btnAceptar">Aceptar</button> 
+        </div>
+    </div>
+    
+    <div id="beer-loader" class="overlay">
+        <div class="vector-scene">
+            
+            <div class="mini-person mini-person-left">
+                <div class="mp-head">
+                    <div class="mp-hair"></div>
+                    <div class="mp-eye left"></div>
+                    <div class="mp-eye right"></div>
+                    <div class="mp-mouth"></div>
+                </div>
+                <div class="mp-body"></div>
+                <div class="mp-arm left"></div>
+                <div class="mp-arm right">
+                    <div class="mp-bottle"><div class="mpb-neck"></div></div>
+                </div>
+                <div class="mp-leg left"></div>
+                <div class="mp-leg right"></div>
+            </div>
+
+            <div class="serving-hand-container">
+                <div class="serving-hand">
+                    <div class="sh-arm"></div>
+                    <div class="sh-hand"></div>
+                    <div class="sh-bottle">
+                        <div class="shb-neck"></div>
+                        <div class="shb-label"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-container">
+                <div class="glass-body">
+                    <div class="liquid"></div>
+                    <div class="foam-head">
+                        <div class="bubble b1"></div>
+                        <div class="bubble b2"></div>
+                        <div class="bubble b3"></div>
+                        <div class="bubble b4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stream"></div>
+
+            <div class="mini-person mini-person-right">
+                <div class="mp-head">
+                    <div class="mp-hair female"></div> 
+                    <div class="mp-eye left"></div>
+                    <div class="mp-eye right"></div>
+                    <div class="mp-mouth"></div>
+                </div>
+                <div class="mp-body female-clothes"></div> 
+                <div class="mp-arm left"></div>
+                <div class="mp-arm right">
+                    <div class="mp-bottle"><div class="mpb-neck"></div></div>
+                </div>
+                <div class="mp-leg left"></div>
+                <div class="mp-leg right"></div>
+            </div>
+        </div>
+        <p class="loader-text">Prepara tu hígado...</p>
+    </div>
+    
+    <div class="invitacion-card">
+        <h1 class="anim-top" style="animation-delay: 0.3s">¡Estás Invitado a tomar!</h1> 
+        <p class="subtitulo anim-top" style="animation-delay: 0.5s">A celebrar cumpleaños de Checho y Chunga</p>
+        <p class="mensaje anim-top" style="animation-delay: 0.7s">
+            ¡Nos encantaría que nos acompañaras para celebrar y tomar hasta perder el conocimiento!
+        </p>
+
+        <div class="detalles">
+            <div class="detalle-item anim-left" style="animation-delay: 1.0s">
+                <div class="icon-box"><span class="material-icons">event</span></div>
+                <p class="detalle-texto">Fecha: 6 de diciembre</p>
+            </div>
+
+            <div class="detalle-item anim-right" style="animation-delay: 1.2s">
+                <div class="icon-box"><span class="material-icons">schedule</span></div>
+                <p class="detalle-texto">Hora: 11:00 PM</p>
+            </div>
+
+            <div class="detalle-item location-item anim-left" style="animation-delay: 1.4s">
+                <div class="icon-box"><span class="material-icons">place</span></div>
+                <div class="location-content">
+                    <p class="detalle-texto">Lugar:</p>
+                    <a href="https://maps.app.goo.gl/jHS5b9dUwBTM2rUF7" target="_blank" class="btn-ver-ubicacion">Ver Ubicación</a>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnVerObligatorio" class="boton-obligatorio anim-pop" style="animation-delay: 1.6s">
+            <span class="material-icons">priority_high</span> Ver Obligatorio
+        </button>
+    </div>
+
+    <div id="modal-obligatorio" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            
+            <h2> TODO ES OBLIGATORIO </h2>
+            
+            <ul class="lista-reglas">
+                <li style="animation-delay: 0.2s">💊 Lleva hepabionta forte (cuida tu higado)</li>
+                <li style="animation-delay: 0.4s">😎 Llegar con la mejor actitud</li>
+                <li style="animation-delay: 0.6s">💋 Participar en los besos de 3</li>
+                <li style="animation-delay: 0.8s">🍻 Tomar como pagado</li>
+                <li style="animation-delay: 1.0s">🕒 Quedarse hasta el final</li>
+            </ul>
+
+            <div class="container-confirmar" style="animation-delay: 1.2s">
+                
+                <p class="texto-final">¿Tomar o Tomar?</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSectZVCQa29DF6waNQOia8Asg50awCP4_nQDc8vfu_qZXe3FA/viewform?usp=sharing&ouid=104722782316420763747" class="boton-confirmar" target="_blank">
+                    <span class="material-icons">check_circle</span>
+                    Confirma Asistencia y Borrachera
+                </a>
+
+                <div class="divider"></div>
+
+                <p class="texto-final" style="margin-top: 15px; font-size: 1em; opacity: 0.8;">Agendar:</p>
+                
+                <div class="calendar-buttons">
+                    <a id="btnGoogleCalendar" href="#" class="boton-cal google-calendar" target="_blank">
+                        <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.523 15.3414C17.523 16.7228 16.4066 17.8393 15.0251 17.8393C13.6437 17.8393 12.5272 16.7228 12.5272 15.3414C12.5272 13.9599 13.6437 12.8434 15.0251 12.8434C16.4066 12.8434 17.523 13.9599 17.523 15.3414ZM6.95845 15.3414C6.95845 16.7228 5.842 17.8393 4.46056 17.8393C3.07912 17.8393 1.96267 16.7228 1.96267 15.3414C1.96267 13.9599 3.07912 12.8434 4.46056 12.8434C5.842 12.8434 6.95845 13.9599 6.95845 15.3414ZM21.6339 9.18313L23.6866 5.62775C23.8003 5.43078 23.7329 5.17996 23.5359 5.06629C23.3389 4.95261 23.0881 5.02004 22.9744 5.21701L20.9014 8.80861C18.992 7.71521 16.8018 7.09021 14.4606 7.09021H14.4562C12.115 7.09021 9.92479 7.71521 8.01538 8.80861L5.94239 5.21701C5.82872 5.02004 5.5779 4.95261 5.38093 5.06629C5.18395 5.17996 5.11653 5.43078 5.2302 5.62775L7.28293 9.18313C3.17955 11.4198 0.422535 15.599 0.422535 20.4155H28.493C28.493 15.599 25.7359 11.4198 21.6339 9.18313Z"/>
+                        </svg>
+                        Android
+                    </a>
+                    
+                    <a id="btnIcsCalendar" href="#" class="boton-cal ics-calendar">
+                        <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor">
+                            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+                        </svg>
+                        iOS
+                    </a>
+                </div>
+            </div>
+
+            <div class="nota-regalo" style="animation-delay: 1.5s">
+                <p><strong>NOTA:</strong> El único regalo obligatorio es venir con la mejor actitud y listo para tomar. ¡Pero si quieres traer algo, tu hígado te lo agradecerá! 😉</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const portada = document.getElementById('portada');
+        const btnAceptar = document.getElementById('btnAceptar');
+        const invitacionCard = document.querySelector('.invitacion-card');
+        const beerLoader = document.getElementById('beer-loader'); 
+        const tituloElemento = document.getElementById('tituloPorta');
+        const subtituloElemento = document.getElementById('subtituloPorta');
+        const textoTitulo = "¡Estás Invitado a Embriagarte!";
+        const textoSubtitulo = "Prepárate para tomar con Checho y Chunga."; 
+        let indiceTitulo = 0;
+        let indiceSubtitulo = 0;
+
+        // Variables Modal
+        const btnVerObligatorio = document.getElementById('btnVerObligatorio');
+        const modalObligatorio = document.getElementById('modal-obligatorio');
+        const spanClose = document.querySelector('.close-modal');
+
+        function escribirTitulo() {
+            if (indiceTitulo < textoTitulo.length) {
+                tituloElemento.textContent += textoTitulo.charAt(indiceTitulo);
+                indiceTitulo++;
+                setTimeout(escribirTitulo, 80); 
+            } else {
+                tituloElemento.style.borderRight = 'none'; 
+                setTimeout(escribirSubtitulo, 500); 
+            }
+        }
+
+        function escribirSubtitulo() {
+            if (indiceSubtitulo < textoSubtitulo.length) {
+                subtituloElemento.textContent += textoSubtitulo.charAt(indiceSubtitulo);
+                indiceSubtitulo++;
+                setTimeout(escribirSubtitulo, 50); 
+            } else {
+                subtituloElemento.style.borderRight = 'none'; 
+                if (btnAceptar) {
+                     btnAceptar.style.opacity = '1'; 
+                     btnAceptar.style.transform = 'translateY(0)'; 
+                }
+            }
+        }
+
+        function ocultarPortada() {
+            if (portada) {
+                portada.style.opacity = '0'; 
+                portada.style.transform = 'scale(0.9)'; 
+                portada.style.pointerEvents = 'none'; 
+
+                setTimeout(() => {
+                    portada.style.display = 'none';
+                    if (beerLoader) {
+                        beerLoader.style.display = 'flex';
+                        beerLoader.style.opacity = '1'; 
+                    }
+                    // 3s Animación + 2s Espera = 5000ms Total (Tiempo corto y rápido)
+                    setTimeout(mostrarInvitacion, 5000); 
+                }, 500); 
+            }
+        }
+
+        function mostrarInvitacion() {
+             if (beerLoader) {
+                beerLoader.style.opacity = '0';
+                beerLoader.style.transform = 'scale(0.9)';
+             }
+             
+             setTimeout(() => {
+                 if (beerLoader) beerLoader.style.display = 'none';
+                 if (invitacionCard) {
+                     invitacionCard.style.display = 'flex'; 
+                 }
+             }, 500);
+        }
+
+        function abrirModal() {
+            modalObligatorio.style.display = 'flex';
+            setTimeout(() => {
+                modalObligatorio.classList.add('active');
+            }, 10);
+        }
+        function cerrarModal() {
+            modalObligatorio.classList.remove('active');
+            setTimeout(() => {
+                modalObligatorio.style.display = 'none';
+            }, 500); 
+        }
+
+        btnVerObligatorio.addEventListener('click', abrirModal);
+        spanClose.addEventListener('click', cerrarModal);
+        window.addEventListener('click', (event) => {
+            if (event.target == modalObligatorio) {
+                cerrarModal();
+            }
+        });
+
+        // CONFIGURACIÓN CALENDARIO
+        const FECHA_EVENTO = "12/06";       
+        const AÑO_EVENTO = 2025;            
+        const HORA_INICIO = 23;             
+        const DURACION_HORAS = 5;           
+        const TITULO_EVENTO = "Cumpleaños Checho y Chunga 🍻";
+        const DESCRIPCION = "Tomar como pagado";
+        const UBICACION = "NOSSO DISCO"; 
+
+        function formatearFecha(fecha, hora, minutos = 0) {
+            const d = new Date(`${fecha}/${AÑO_EVENTO} ${hora}:${minutos}:00`);
+            const fechaFin = new Date(d);
+            fechaFin.setHours(d.getHours() + DURACION_HORAS);
+            const formato = (date) => {
+                const y = date.getFullYear();
+                const m = (date.getMonth() + 1).toString().padStart(2, '0');
+                const day = date.getDate().toString().padStart(2, '0');
+                const h = date.getHours().toString().padStart(2, '0');
+                const min = date.getMinutes().toString().padStart(2, '0');
+                return `${y}${m}${day}T${h}${min}00`;
+            };
+            return { start: formato(d), end: formato(fechaFin) };
+        }
+
+        const btnGoogle = document.getElementById('btnGoogleCalendar');
+        const btnIcs = document.getElementById('btnIcsCalendar');
+
+        if (btnGoogle) {
+            const { start, end } = formatearFecha(FECHA_EVENTO, HORA_INICIO);
+            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(TITULO_EVENTO)}&dates=${start}/${end}&details=${encodeURIComponent(DESCRIPCION)}&location=${encodeURIComponent(UBICACION)}`;
+            btnGoogle.href = url;
+        }
+
+        if (btnIcs) {
+            btnIcs.addEventListener('click', (e) => {
+                e.preventDefault();
+                const { start, end } = formatearFecha(FECHA_EVENTO, HORA_INICIO);
+                const icsContent = [
+                    'BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT',
+                    `DTSTART:${start}`, `DTEND:${end}`,
+                    `SUMMARY:${TITULO_EVENTO}`, `DESCRIPTION:${DESCRIPCION}`, `LOCATION:${UBICACION}`,
+                    'END:VEVENT', 'END:VCALENDAR'
+                ].join('\n');
+                const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'evento_fiesta.ics';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        }
+
+        window.addEventListener('load', () => {
+            if(tituloElemento) tituloElemento.textContent = '';
+            if(subtituloElemento) subtituloElemento.textContent = '';
+            if (beerLoader) beerLoader.style.display = 'none'; 
+            escribirTitulo(); 
+            if (btnAceptar) {
+                btnAceptar.style.opacity = '0';
+                btnAceptar.style.transform = 'translateY(20px)';
+                btnAceptar.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            }
+        });
+
+        if (btnAceptar) {
+            btnAceptar.addEventListener('click', ocultarPortada);
+        }
+    </script>
+</body>
+</html>

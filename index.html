@@ -6,6 +6,7 @@
     <title>Invitación a tomar 🎉</title>
     
     <link rel="stylesheet" href="style.css"> 
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
 </head>
@@ -14,8 +15,11 @@
     <div id="portada" class="overlay">
         <div class="portada-contenido entrada-elegante">
             <h1 id="tituloPorta"></h1> 
-            <p id="subtituloPorta"></p> 
-            <button id="btnAceptar">Aceptar</button> 
+            <p class="instruccion-nombre">Escribe tu nombre :</p>
+            
+            <input type="text" id="inputNombre" class="name-input" placeholder="Tu nombre aquí..." autocomplete="off">
+            
+            <button id="btnAceptar">Continuar</button> 
         </div>
     </div>
     
@@ -79,14 +83,16 @@
                 <div class="mp-leg right"></div>
             </div>
         </div>
-        <p class="loader-text">Prepara tu hígado...</p>
+        
+        <p id="loaderText" class="loader-text">Prepara tu hígado...</p>
     </div>
     
     <div class="invitacion-card">
-        <h1 class="anim-top" style="animation-delay: 0.3s">¡Estás Invitado a tomar!</h1> 
+        <h1 id="tituloInvitacion" class="anim-top" style="animation-delay: 0.3s">Estás Invitado a tomar</h1> 
+        
         <p class="subtitulo anim-top" style="animation-delay: 0.5s">A celebrar cumpleaños de Jeyson y Christian</p>
         <p class="mensaje anim-top" style="animation-delay: 0.7s">
-            ¡Nos encantaría que nos acompañaras para celebrar y tomar hasta perder el conocimiento!
+            ¡Nos encantaría que nos acompañaras a celebrar y tomar hasta perder el conocimiento!
         </p>
 
         <div class="detalles">
@@ -104,7 +110,7 @@
                 <div class="icon-box"><span class="material-icons">place</span></div>
                 <div class="location-content">
                     <p class="detalle-texto">Lugar: Discoteca Nosso</p>
-                    <a href="https://maps.app.goo.gl/jHS5b9dUwBTM2rUF7" target="_blank" class="btn-ver-ubicacion">📍</a>
+                    <a href="https://maps.app.goo.gl/xLHW33BMjp2HtFJFA" target="_blank" class="btn-ver-ubicacion">📍</a>
                 </div>
             </div>
         </div>
@@ -118,10 +124,10 @@
         <div class="modal-content">
             <span class="close-modal">×</span>
             
-            <h2> TODO ES OBLIGATORIO </h2>
+            <h2 id="tituloModal">TODO ES OBLIGATORIO</h2>
             
             <ul class="lista-reglas">
-                <li style="animation-delay: 0.2s">💊 Lleva hepabionta forte (cuida tu higado)</li>
+                <li style="animation-delay: 0.2s">💊 Llevar hepabionta forte(Cuida tu higado)</li>
                 <li style="animation-delay: 0.4s">😎 Llegar con la mejor actitud</li>
                 <li style="animation-delay: 0.6s">💋 Participar en los besos de 3</li>
                 <li style="animation-delay: 0.8s">🍻 Tomar como pagado</li>
@@ -133,19 +139,19 @@
                 <p class="texto-final"></p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSectZVCQa29DF6waNQOia8Asg50awCP4_nQDc8vfu_qZXe3FA/viewform?usp=sharing&ouid=104722782316420763747" class="boton-confirmar" target="_blank">
                     <span class="material-icons">check_circle</span>
-                    Confirmar Asistencia 
+                    Confirma Asistencia y Borrachera
                 </a>
 
-                <div class="divider"></div>
+                <div class="divider" style="margin: 20px 0; border-top: 1px solid #333;"></div>
 
-                <p class="texto-final" style="margin-top: 15px; font-size: 1em; opacity: 0.8;">Agendar Borrachera:</p>
+                <p class="texto-final" style="font-size: 1em; opacity: 0.8;">Agendar en tu borrachera:</p>
                 
                 <div class="calendar-buttons">
                     <a id="btnGoogleCalendar" href="#" class="boton-cal google-calendar" target="_blank">
                         <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.523 15.3414C17.523 16.7228 16.4066 17.8393 15.0251 17.8393C13.6437 17.8393 12.5272 16.7228 12.5272 15.3414C12.5272 13.9599 13.6437 12.8434 15.0251 12.8434C16.4066 12.8434 17.523 13.9599 17.523 15.3414ZM6.95845 15.3414C6.95845 16.7228 5.842 17.8393 4.46056 17.8393C3.07912 17.8393 1.96267 16.7228 1.96267 15.3414C1.96267 13.9599 3.07912 12.8434 4.46056 12.8434C5.842 12.8434 6.95845 13.9599 6.95845 15.3414ZM21.6339 9.18313L23.6866 5.62775C23.8003 5.43078 23.7329 5.17996 23.5359 5.06629C23.3389 4.95261 23.0881 5.02004 22.9744 5.21701L20.9014 8.80861C18.992 7.71521 16.8018 7.09021 14.4606 7.09021H14.4562C12.115 7.09021 9.92479 7.71521 8.01538 8.80861L5.94239 5.21701C5.82872 5.02004 5.5779 4.95261 5.38093 5.06629C5.18395 5.17996 5.11653 5.43078 5.2302 5.62775L7.28293 9.18313C3.17955 11.4198 0.422535 15.599 0.422535 20.4155H28.493C28.493 15.599 25.7359 11.4198 21.6339 9.18313Z"/>
+                            <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
                         </svg>
-                        Android
+                        Google
                     </a>
                     
                     <a id="btnIcsCalendar" href="#" class="boton-cal ics-calendar">
@@ -158,27 +164,31 @@
             </div>
 
             <div class="nota-regalo" style="animation-delay: 1.5s">
-                <p><strong>🎁</strong> El mejor regalo es obligatorio tomar. Pero si insistes, bienvenido todo 😉</p>
+                <p><strong>🎁</strong> El único regalo obligatorio es tomar. Pero si quieres insistes, todo es bienvenido</p>
             </div>
         </div>
     </div>
 
     <script>
+        // DOM Elements
+        const tituloElemento = document.getElementById('tituloPorta');
         const portada = document.getElementById('portada');
+        const inputNombre = document.getElementById('inputNombre');
         const btnAceptar = document.getElementById('btnAceptar');
+        
+        const loaderText = document.getElementById('loaderText');
+        const tituloInvitacion = document.getElementById('tituloInvitacion');
+        const tituloModal = document.getElementById('tituloModal');
+
         const invitacionCard = document.querySelector('.invitacion-card');
         const beerLoader = document.getElementById('beer-loader'); 
-        const tituloElemento = document.getElementById('tituloPorta');
-        const subtituloElemento = document.getElementById('subtituloPorta');
-        const textoTitulo = "¡Estás Invitado a Embriagarte!";
-        const textoSubtitulo = "Prepárate para tomar"; 
-        let indiceTitulo = 0;
-        let indiceSubtitulo = 0;
-
-        
         const btnVerObligatorio = document.getElementById('btnVerObligatorio');
         const modalObligatorio = document.getElementById('modal-obligatorio');
         const spanClose = document.querySelector('.close-modal');
+
+        // Typing Effect
+        const textoTitulo = "¡Estás Invitado a Embriagarte!";
+        let indiceTitulo = 0;
 
         function escribirTitulo() {
             if (indiceTitulo < textoTitulo.length) {
@@ -187,24 +197,31 @@
                 setTimeout(escribirTitulo, 80); 
             } else {
                 tituloElemento.style.borderRight = 'none'; 
-                setTimeout(escribirSubtitulo, 500); 
+                inputNombre.style.opacity = '1';
+                inputNombre.style.transform = 'translateY(0)';
+                btnAceptar.style.opacity = '1';
+                btnAceptar.style.transform = 'translateY(0)';
             }
         }
 
-        function escribirSubtitulo() {
-            if (indiceSubtitulo < textoSubtitulo.length) {
-                subtituloElemento.textContent += textoSubtitulo.charAt(indiceSubtitulo);
-                indiceSubtitulo++;
-                setTimeout(escribirSubtitulo, 50); 
-            } else {
-                subtituloElemento.style.borderRight = 'none'; 
-                if (btnAceptar) {
-                     btnAceptar.style.opacity = '1'; 
-                     btnAceptar.style.transform = 'translateY(0)'; 
-                }
+        // Logic: Process Name & Start Transition
+        function procesarEntrada() {
+            const nombreUsuario = inputNombre.value.trim();
+            if (nombreUsuario === "") {
+                alert("Por favor escribe tu nombre 🍻");
+                return;
             }
+            const nombreFormateado = nombreUsuario.charAt(0).toUpperCase() + nombreUsuario.slice(1);
+
+            // Personalización
+            loaderText.textContent = `Prepara tu hígado ${nombreFormateado}...`;
+            tituloInvitacion.innerHTML = `${nombreFormateado},<br>¡Estás Invitado a tomar!`;
+            tituloModal.textContent = ` ${nombreFormateado}, TODO ES OBLIGATORIO `;
+
+            ocultarPortada();
         }
 
+        // Transition Logic (3s animation + 2s wait = 5s total)
         function ocultarPortada() {
             if (portada) {
                 portada.style.opacity = '0'; 
@@ -217,7 +234,7 @@
                         beerLoader.style.display = 'flex';
                         beerLoader.style.opacity = '1'; 
                     }
-                    // 3s Animación + 2s Espera = 5000ms Total (Tiempo corto y rápido)
+                    // CAMBIO A 5 SEGUNDOS (5000ms)
                     setTimeout(mostrarInvitacion, 5000); 
                 }, 500); 
             }
@@ -228,7 +245,6 @@
                 beerLoader.style.opacity = '0';
                 beerLoader.style.transform = 'scale(0.9)';
              }
-             
              setTimeout(() => {
                  if (beerLoader) beerLoader.style.display = 'none';
                  if (invitacionCard) {
@@ -237,6 +253,7 @@
              }, 500);
         }
 
+        // Modal Logic
         function abrirModal() {
             modalObligatorio.style.display = 'flex';
             setTimeout(() => {
@@ -258,13 +275,14 @@
             }
         });
 
+        // Calendar Logic
         const FECHA_EVENTO = "12/06";       
         const AÑO_EVENTO = 2025;            
         const HORA_INICIO = 23;             
         const DURACION_HORAS = 5;           
-        const TITULO_EVENTO = "Cumpleaños Jeyson y Christian🍻";
-        const DESCRIPCION = "Tomar como pagado";
-        const UBICACION = "NOSSO DISCO"; 
+        const TITULO_EVENTO = "Cumpleaños de Jeyson y Christian";
+        const DESCRIPCION = "Obligatorio toma";
+        const UBICACION = "Discoteca Nosso"; 
 
         function formatearFecha(fecha, hora, minutos = 0) {
             const d = new Date(`${fecha}/${AÑO_EVENTO} ${hora}:${minutos}:00`);
@@ -311,27 +329,25 @@
             });
         }
 
+        // Init
         window.addEventListener('load', () => {
             if(tituloElemento) tituloElemento.textContent = '';
-            if(subtituloElemento) subtituloElemento.textContent = '';
             if (beerLoader) beerLoader.style.display = 'none'; 
+            
+            inputNombre.style.opacity = '0';
+            inputNombre.style.transform = 'translateY(20px)';
+            inputNombre.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            
+            btnAceptar.style.opacity = '0';
+            btnAceptar.style.transform = 'translateY(20px)';
+            btnAceptar.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+
             escribirTitulo(); 
-            if (btnAceptar) {
-                btnAceptar.style.opacity = '0';
-                btnAceptar.style.transform = 'translateY(20px)';
-                btnAceptar.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
-            }
         });
 
         if (btnAceptar) {
-            btnAceptar.addEventListener('click', ocultarPortada);
+            btnAceptar.addEventListener('click', procesarEntrada);
         }
     </script>
 </body>
-
 </html>
-
-
-
-
-

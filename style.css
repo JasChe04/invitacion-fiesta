@@ -18,7 +18,7 @@
     --hand-bottle-color: #5e2c04;
 
     /* Variables mini-personajes */
-    --mini-hair-color-female: #e6b32b;
+    --mini-hair-color-female: #e6b32b; 
     --mini-clothes-color-female: #e91e63; 
     --mini-clothes-color-male: #2ecc71; 
     --mini-pants-color: #34495e; 
@@ -34,7 +34,7 @@
 @keyframes appearAndPulse { 0% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
 @keyframes slideInRightList { 0% { opacity: 0; transform: translateX(-30px); } 100% { opacity: 1; transform: translateX(0); } }
 
-/* --- ANIMACIONES DEL LOADER (3 Segundos) --- */
+/* --- ANIMACIONES DEL LOADER (3s) --- */
 @keyframes miniDrink {
     0%, 55% { transform: rotate(0deg); } 
     60% { transform: rotate(-60deg) translateY(-10px) translateX(-2px); } 
@@ -51,9 +51,6 @@
 }
 @keyframes fillGlass { 0%, 30% { height: 0%; } 50% { height: 85%; } 100% { height: 85%; } }
 @keyframes foamRise { 0%, 30% { bottom: 0%; transform: scale(0); } 50% { bottom: 85%; transform: scale(1); } 100% { bottom: 85%; transform: scale(1); } }
-.bubble { position: absolute; background-color: var(--foam-color); border-radius: 50%; }
-.b1 { width: 35px; height: 35px; left: 10px; top: -10px; } .b2 { width: 45px; height: 45px; left: 30px; top: -15px; } .b3 { width: 30px; height: 30px; left: 60px; top: -5px; } .b4 { width: 25px; height: 25px; left: 0px; top: 0px; } 
-
 @keyframes servingHandAction {
     0%, 20% { transform: translate(150px, 0px) rotate(0deg); opacity: 0; } 
     25% { transform: translate(0px, 0px) rotate(0deg); opacity: 1; } 
@@ -76,7 +73,7 @@ body {
     box-sizing: border-box; color: #333; overflow-x: hidden;
 }
 
-/* --- OVERLAY & PORTADA --- */
+/* --- PORTADA --- */
 .overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -86,23 +83,25 @@ body {
     background-color: #1a1a1a; color: #fff; padding: 50px 70px; border-radius: 15px;
     border: 1px solid #333; max-width: 90%; width: 500px; animation: popInElastic 1s forwards;
 }
-.portada-contenido h1 { color: white; font-size: 3em; margin-bottom: 25px; font-weight: 700; border-right: .15em solid white; overflow: hidden; white-space: normal; max-width: 100%; }
-.portada-contenido p { font-size: 1.3em; margin-bottom: 35px; color: #ccc; border-right: .15em solid white; overflow: hidden; white-space: normal; max-width: 100%; }
+.portada-contenido h1 { color: white; font-size: 3em; margin-bottom: 20px; font-weight: 700; border-right: .15em solid white; overflow: hidden; white-space: normal; max-width: 100%; }
+.instruccion-nombre { font-size: 1.1em; color: #ccc; margin-bottom: 15px; }
+
+/* Input de Nombre */
+.name-input {
+    width: 80%; padding: 12px; margin-bottom: 25px; border-radius: 8px; border: 2px solid #444;
+    background-color: #222; color: white; font-size: 1.1em; text-align: center; outline: none; transition: 0.3s;
+}
+.name-input:focus { border-color: var(--pink-accent); box-shadow: 0 0 10px rgba(255, 87, 127, 0.2); }
+
 #btnAceptar {
-    background-color: var(--pink-accent); color: white; 
-    /* --- CAMBIOS SOLICITADOS --- */
-    padding: 8px 18px; 
-    border: none; border-radius: 50px;
-    cursor: pointer; 
-    font-size: 1.1em; 
-    /* --------------------------- */
-    font-weight: bold; margin-top: 30px; transition: 0.3s;
+    background-color: var(--pink-accent); color: white; padding: 8px 18px; border: none; border-radius: 50px;
+    cursor: pointer; font-size: 1.1em; font-weight: bold; margin-top: 10px; transition: 0.3s;
     box-shadow: 0 4px 15px rgba(255, 87, 127, 0.3);
 }
 #btnAceptar:hover { background-color: #e91e63; transform: translateY(-3px); }
 
 /* --- LOADER SCENE --- */
-#beer-loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; }
+#beer-loader { display: none; background-color: #000; }
 .vector-scene { 
     position: relative; width: 700px; height: 400px; 
     display: flex; justify-content: center; align-items: flex-end; 
@@ -114,6 +113,7 @@ body {
 .glass-body { position: relative; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.1); border: 4px solid #fff; border-top: none; border-radius: 5px 5px 40px 40px; overflow: hidden; box-shadow: 0 0 20px rgba(255,255,255,0.1); }
 .liquid { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background-color: var(--beer-color); animation: fillGlass 3s ease-in-out forwards; }
 .foam-head { position: absolute; bottom: 0; left: -10%; width: 120%; height: 30px; z-index: 6; animation: foamRise 3s ease-in-out forwards; }
+.bubble { position: absolute; background-color: var(--foam-color); border-radius: 50%; }
 .b1 { width: 35px; height: 35px; left: 10px; top: -10px; } .b2 { width: 45px; height: 45px; left: 30px; top: -15px; } .b3 { width: 30px; height: 30px; left: 60px; top: -5px; } .b4 { width: 25px; height: 25px; left: 0px; top: 0px; } 
 
 .stream { position: absolute; top: 130px; left: calc(50% + 15px); width: 10px; height: 0; background-color: var(--beer-color); border-radius: 10px; z-index: 1; animation: streamFlow 3s ease-in-out forwards; }
@@ -148,13 +148,13 @@ body {
 
 .loader-text { position: relative; z-index: 20; color: #e0e0e0; font-size: 1.8em; font-weight: 800; margin-top: 40px; text-transform: uppercase; letter-spacing: 1px; animation: blink 1.5s infinite; text-align: center; width: 100%; bottom: 0; }
 
-/* --- RESPONSIVE LOADER --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 600px) {
     .vector-scene { transform: scale(0.45); width: 100%; height: 180px; overflow: visible; }
     .mini-person-left { left: calc(50% - 140px); } .mini-person-right { right: calc(50% - 140px); }
     .portada-contenido { padding: 5vw; width: 85%; }
-    .portada-contenido h1 { font-size: 1.8em; max-width: 90%; }
-    .portada-contenido p { font-size: 0.9em; max-width: 90%; }
+    .portada-contenido h1 { font-size: 1.8em; }
+    .name-input { width: 90%; }
     #btnAceptar { font-size: 1.1em; padding: 12px 25px; }
     .loader-text { font-size: 1em; margin-top: 20px; transform: translateY(-50px); }
     .invitacion-card { padding: 25px 15px; max-width: 95%; }
@@ -195,18 +195,9 @@ body {
 .location-content { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-left: 15px; }
 .location-content .detalle-texto { margin-left: 0; }
 .btn-ver-ubicacion { 
-    background-color: var(--blue-accent); 
-    color: #000; 
-    /* --- Tamaño más pequeño del botón de ubicación (cambio anterior) --- */
-    padding: 4px 12px; 
-    border-radius: 20px; 
-    text-decoration: none; 
-    font-size: 0.75em; 
-    /* ------------------------------------------------ */
-    font-weight: 700; 
-    white-space: nowrap; 
-    transition: 0.2s; 
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.4); 
+    background-color: var(--blue-accent); color: #000; padding: 4px 12px; border-radius: 20px; 
+    text-decoration: none; font-size: 0.75em; font-weight: 700; white-space: nowrap; 
+    transition: 0.2s; box-shadow: 0 0 10px rgba(0, 210, 255, 0.4); 
 }
 .btn-ver-ubicacion:hover { background-color: #fff; transform: scale(1.05); }
 .boton-obligatorio {
@@ -219,21 +210,24 @@ body {
 .boton-obligatorio .material-icons { margin-right: 10px; font-size: 28px; }
 .boton-confirmar { display: flex; align-items: center; justify-content: center; background-color: var(--green-accent); color: white; padding: 15px 20px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 1.2em; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); width: 100%; box-sizing: border-box; transition: 0.3s; }
 .boton-confirmar:hover { background-color: #128c7e; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6); }
-
-/* Estilo para el ícono (material-icons) dentro del botón de confirmar */
-.boton-confirmar .material-icons {
-    margin-right: 10px; 
-    font-size: 28px;
-}
+.boton-confirmar .material-icons { margin-right: 10px; font-size: 28px; }
 
 /* --- ESTILOS MODAL --- */
-.modal-overlay { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; opacity: 0; transition: opacity 0.5s ease-out; }
+.modal-overlay { 
+    display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; 
+    opacity: 0; transition: opacity 0.5s ease-out; 
+}
 .modal-overlay.active { opacity: 1; }
 .modal-content {
     background-color: #1a1a1a; padding: 40px; border-radius: 15px; width: 90%; max-width: 400px;
     position: relative; box-shadow: 0 0 40px rgba(0, 229, 255, 0.3); color: white;
     transform: translateY(-50px); opacity: 0; transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-    border: 3px solid #000; /* Borde NEGRO solicitado */
+    border: 3px solid #000; /* Borde NEGRO */
+    
+    /* Corrección de Scroll para móviles */
+    max-height: 85vh; 
+    overflow-y: auto; 
 }
 .modal-overlay.active .modal-content { transform: translateY(0); opacity: 1; }
 .close-modal { color: #aaa; float: right; font-size: 35px; font-weight: bold; position: absolute; top: 10px; right: 20px; cursor: pointer; transition: 0.2s; }
@@ -247,7 +241,6 @@ body {
 .container-confirmar { margin-top: 30px; text-align: center; opacity: 0; animation: fadeInUpSoft 0.5s ease-out forwards; }
 .texto-final { font-size: 1.2em; color: #fff; margin-bottom: 15px; font-weight: 600; }
 
-/* Calendario Botones */
 .calendar-buttons { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
 .boton-cal { display: flex; align-items: center; justify-content: center; padding: 10px 15px; border-radius: 8px; text-decoration: none; color: white; font-weight: 500; transition: 0.3s; font-size: 0.9em; width: 48%; box-sizing: border-box; }
 .google-calendar { background-color: #4285F4; } .google-calendar:hover { background-color: #357ae8; }
